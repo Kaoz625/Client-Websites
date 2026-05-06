@@ -3,104 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NYC Tailblazers — Portfolio</title>
+<title>NYC Tailblazers — Full Portfolio</title>
 <style>
-  :root {
-    --accent: #ff6600;
-    --accent2: #ff3366;
-    --bg: #080808;
-    --surface: #111;
-    --border: #1e1e1e;
-    --text: #fff;
-    --muted: #666;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
-
-  header {
-    padding: 5rem 2rem 4rem;
-    text-align: center;
-    background: radial-gradient(ellipse at 50% 0%, rgba(255,102,0,.15) 0%, transparent 70%);
-    border-bottom: 1px solid var(--border);
-  }
-  .logo { font-size:.75rem; letter-spacing:.3em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
-  header h1 { font-size:clamp(2.2rem,5vw,4rem); font-weight:800; letter-spacing:-2px; margin-bottom:1rem; }
-  header h1 span { background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-  header p { color:var(--muted); font-size:1.1rem; max-width:520px; margin:0 auto 2rem; line-height:1.6; }
-  .stat-row { display:flex; gap:3rem; justify-content:center; flex-wrap:wrap; }
-  .stat { text-align:center; }
-  .stat-n { font-size:2rem; font-weight:800; background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-  .stat-l { font-size:.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; margin-top:.2rem; }
-
-  .filters { display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; padding:2.5rem 2rem 1.5rem; }
-  .filter-btn {
-    padding:.5rem 1.2rem; border-radius:99px; border:1px solid var(--border);
-    background:transparent; color:var(--muted); cursor:pointer; font-size:.85rem;
-    transition:all .2s; font-family:inherit;
-  }
-  .filter-btn:hover, .filter-btn.active {
-    border-color:var(--accent); color:var(--text);
-    background:rgba(255,102,0,.1);
-  }
-
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.25rem; padding:1rem 2rem 5rem; max-width:1400px; margin:0 auto; }
-
-  .card {
-    background:var(--surface); border:1px solid var(--border); border-radius:14px;
-    overflow:hidden; transition:transform .2s, border-color .2s, box-shadow .2s;
-    display:flex; flex-direction:column;
-  }
-  .card:hover { transform:translateY(-4px); border-color:var(--accent); box-shadow:0 12px 40px rgba(255,102,0,.12); }
-  .card.soon { opacity:.6; }
-  .card.soon:hover { transform:none; border-color:var(--border); box-shadow:none; }
-
-  .card-thumb { height:10px; background:linear-gradient(90deg,var(--accent),var(--accent2)); }
-  .card-thumb.blue   { background:linear-gradient(90deg,#00c2ff,#7b2fff); }
-  .card-thumb.green  { background:linear-gradient(90deg,#00ff88,#00c2ff); }
-  .card-thumb.pink   { background:linear-gradient(90deg,#ff3366,#ff6600); }
-  .card-thumb.gold   { background:linear-gradient(90deg,#ffd700,#ff8c00); }
-  .card-thumb.purple { background:linear-gradient(90deg,#9b59b6,#3498db); }
-  .card-thumb.gray   { background:linear-gradient(90deg,#444,#666); }
-
-  .card-body { padding:1.4rem; flex:1; display:flex; flex-direction:column; }
-  .card-tag { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em; color:var(--accent); margin-bottom:.5rem; display:flex; align-items:center; gap:.5rem; }
-  .card-tag.blue   { color:#00c2ff; }
-  .card-tag.green  { color:#00ff88; }
-  .card-tag.pink   { color:#ff3366; }
-  .card-tag.gold   { color:#ffd700; }
-  .card-tag.purple { color:#9b59b6; }
-  .card-tag.gray   { color:#888; }
-  .badge-soon { background:#222; border:1px solid #444; color:#888; font-size:.65rem; padding:.15rem .5rem; border-radius:4px; text-transform:uppercase; letter-spacing:.08em; }
-  .card h3 { font-size:1.05rem; font-weight:700; margin-bottom:.4rem; }
-  .card p  { font-size:.85rem; color:var(--muted); line-height:1.5; flex:1; margin-bottom:1.2rem; }
-  .card a {
-    display:inline-flex; align-items:center; gap:.4rem;
-    font-size:.82rem; color:var(--text); text-decoration:none;
-    border:1px solid var(--border); border-radius:8px;
-    padding:.45rem .9rem; transition:all .2s; width:fit-content;
-  }
-  .card a:hover { border-color:var(--accent); color:var(--accent); }
-  .card a svg { width:12px; height:12px; }
-  .soon-label {
-    display:inline-flex; align-items:center;
-    font-size:.82rem; color:#555;
-    border:1px solid #2a2a2a; border-radius:8px;
-    padding:.45rem .9rem; width:fit-content;
-  }
-
-  footer { text-align:center; padding:2rem; color:var(--muted); font-size:.8rem; border-top:1px solid var(--border); }
+  :root{--accent:#ff6600;--accent2:#ff3366;--bg:#080808;--surface:#111;--border:#1e1e1e;--text:#fff;--muted:#666}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+  header{padding:5rem 2rem 4rem;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(255,102,0,.15) 0%,transparent 70%);border-bottom:1px solid var(--border)}
+  .logo{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+  header h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:800;letter-spacing:-2px;margin-bottom:1rem}
+  header h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  header p{color:var(--muted);font-size:1.1rem;max-width:520px;margin:0 auto 2rem;line-height:1.6}
+  .stat-row{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap}
+  .stat{text-align:center}
+  .stat-n{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .stat-l{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+  .filters{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;padding:2.5rem 2rem 1.5rem}
+  .filter-btn{padding:.5rem 1.2rem;border-radius:99px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-size:.85rem;transition:all .2s;font-family:inherit}
+  .filter-btn:hover,.filter-btn.active{border-color:var(--accent);color:var(--text);background:rgba(255,102,0,.1)}
+  .search-wrap{display:flex;justify-content:center;padding:0 2rem 1.5rem}
+  .search-wrap input{background:#111;border:1px solid var(--border);color:var(--text);padding:.6rem 1.2rem;border-radius:99px;font-size:.9rem;width:100%;max-width:360px;font-family:inherit;outline:none}
+  .search-wrap input:focus{border-color:var(--accent)}
+  .search-wrap input::placeholder{color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;padding:1rem 2rem 5rem;max-width:1400px;margin:0 auto}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 12px 40px rgba(255,102,0,.12)}
+  .card-thumb{height:10px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+  .ct-blue{background:linear-gradient(90deg,#00c2ff,#7b2fff)}
+  .ct-green{background:linear-gradient(90deg,#00ff88,#00c2ff)}
+  .ct-pink{background:linear-gradient(90deg,#ff3366,#ff6600)}
+  .ct-gold{background:linear-gradient(90deg,#ffd700,#ff8c00)}
+  .ct-purple{background:linear-gradient(90deg,#9b59b6,#3498db)}
+  .ct-teal{background:linear-gradient(90deg,#00b4d8,#06d6a0)}
+  .ct-red{background:linear-gradient(90deg,#e63946,#f4a261)}
+  .card-body{padding:1.4rem;flex:1;display:flex;flex-direction:column}
+  .card-tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:.5rem}
+  .tag-blue{color:#00c2ff}.tag-green{color:#00ff88}.tag-pink{color:#ff3366}
+  .tag-gold{color:#ffd700}.tag-purple{color:#9b59b6}.tag-teal{color:#00b4d8}.tag-red{color:#e63946}
+  .card h3{font-size:1.05rem;font-weight:700;margin-bottom:.4rem}
+  .card p{font-size:.85rem;color:var(--muted);line-height:1.5;flex:1;margin-bottom:1.2rem}
+  .card a{display:inline-flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--text);text-decoration:none;border:1px solid var(--border);border-radius:8px;padding:.45rem .9rem;transition:all .2s;width:fit-content}
+  .card a:hover{border-color:var(--accent);color:var(--accent)}
+  .card a svg{width:12px;height:12px}
+  .hidden{display:none!important}
+  footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
 </style>
 </head>
 <body>
-
 <header>
   <div class="logo">NYC Tailblazers</div>
   <h1>We Build <span>Digital Presence</span></h1>
-  <p>Websites, apps, and digital tools for businesses across New York City.</p>
+  <p>Websites, apps, AI agents, and automation pipelines — built in NYC.</p>
   <div class="stat-row">
-    <div class="stat"><div class="stat-n">20+</div><div class="stat-l">Sites Live</div></div>
-    <div class="stat"><div class="stat-n">5</div><div class="stat-l">Industries</div></div>
-    <div class="stat"><div class="stat-n">1</div><div class="stat-l">Domain Network</div></div>
+    <div class="stat"><div class="stat-n" id="total-count">0</div><div class="stat-l">Projects</div></div>
+    <div class="stat"><div class="stat-n">10+</div><div class="stat-l">Client Sites</div></div>
+    <div class="stat"><div class="stat-n">18</div><div class="stat-l">AI Pipelines</div></div>
   </div>
 </header>
 
@@ -108,236 +64,140 @@
   <button class="filter-btn active" onclick="filter('all',this)">All</button>
   <button class="filter-btn" onclick="filter('client',this)">Client Sites</button>
   <button class="filter-btn" onclick="filter('brand',this)">NYC Tailblazers</button>
-  <button class="filter-btn" onclick="filter('app',this)">Apps &amp; Tools</button>
+  <button class="filter-btn" onclick="filter('app',this)">Apps</button>
+  <button class="filter-btn" onclick="filter('ai',this)">AI &amp; Tools</button>
+  <button class="filter-btn" onclick="filter('pipeline',this)">Pipelines</button>
 </div>
-
-<div class="grid" id="grid">
-
-  <!-- CLIENT SITES -->
-  <div class="card" data-cat="client">
-    <div class="card-thumb gold"></div>
-    <div class="card-body">
-      <div class="card-tag gold">Client — Renovations</div>
-      <h3>Titan Renovations NYC</h3>
-      <p>Full-service renovation &amp; construction. Gallery, services, and contact form.</p>
-      <a href="https://titan.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="client">
-    <div class="card-thumb gold"></div>
-    <div class="card-body">
-      <div class="card-tag gold">Client — Painting</div>
-      <h3>C Painting Services</h3>
-      <p>Professional painting across NYC — residential &amp; commercial, interior &amp; exterior.</p>
-      <a href="https://cpaintingservices.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="client">
-    <div class="card-thumb gold"></div>
-    <div class="card-body">
-      <div class="card-tag gold">Client — Painting</div>
-      <h3>C Painting Services Brooklyn</h3>
-      <p>Brooklyn-focused painting services — residential, commercial, interior &amp; exterior.</p>
-      <a href="https://cpaintingbrooklyn.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="client">
-    <div class="card-thumb"></div>
-    <div class="card-body">
-      <div class="card-tag">Client — Coaching</div>
-      <h3>Clarity Coaching Pro</h3>
-      <p>Professional life &amp; business coaching. Services, results, and about pages.</p>
-      <a href="https://kaoz625.github.io/claritycoachingpro/">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="client">
-    <div class="card-thumb pink"></div>
-    <div class="card-body">
-      <div class="card-tag pink">Client — Brand Management</div>
-      <h3>Gentleman Brand Management</h3>
-      <p>Premium brand management and consulting services for artists and entrepreneurs.</p>
-      <a href="https://gentlemanbrandmanagement.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="client">
-    <div class="card-thumb pink"></div>
-    <div class="card-body">
-      <div class="card-tag pink">Client — Beauty</div>
-      <h3>Luxe &amp; Co Hair</h3>
-      <p>Luxury hair salon — services, gallery, and online booking.</p>
-      <a href="https://luxeandcohair.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="client">
-    <div class="card-thumb blue"></div>
-    <div class="card-body">
-      <div class="card-tag blue">Client — HVAC</div>
-      <h3>Peak Pro HVAC</h3>
-      <p>Heating, ventilation, and air conditioning services for NYC homes and businesses.</p>
-      <a href="https://peakprohvac.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="client">
-    <div class="card-thumb green"></div>
-    <div class="card-body">
-      <div class="card-tag green">Client — Tattoo</div>
-      <h3>Green Lantern Ink</h3>
-      <p>Custom tattoo studio — portfolio, artist showcase, and booking.</p>
-      <a href="https://greenlanternink.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="client">
-    <div class="card-thumb purple"></div>
-    <div class="card-body">
-      <div class="card-tag purple">Client — Jewelry &amp; Cleaning</div>
-      <h3>Royal Kims</h3>
-      <p>Jewelry and cleaning services — product showcase and contact.</p>
-      <a href="https://royalkims.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="client">
-    <div class="card-thumb"></div>
-    <div class="card-body">
-      <div class="card-tag">Client — Community</div>
-      <h3>AFU Social Club</h3>
-      <p>All For Uniting Social Club — Brooklyn's community movement. United, Anything Is Possible.</p>
-      <a href="https://afu.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <!-- NYC TAILBLAZERS BRAND -->
-  <div class="card" data-cat="brand">
-    <div class="card-thumb"></div>
-    <div class="card-body">
-      <div class="card-tag">NYC Tailblazers</div>
-      <h3>Main Website</h3>
-      <p>Professional dog walking &amp; pet care in Brooklyn, NY. Services, booking, and contact.</p>
-      <a href="https://nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="brand">
-    <div class="card-thumb"></div>
-    <div class="card-body">
-      <div class="card-tag">NYC Tailblazers — Modern</div>
-      <h3>Modern Site</h3>
-      <p>Next-generation NYC Tailblazers site — dog walking, websites, apps, and AI agents.</p>
-      <a href="https://modern.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="brand">
-    <div class="card-thumb"></div>
-    <div class="card-body">
-      <div class="card-tag">NYC Tailblazers — Portfolio</div>
-      <h3>Website Portfolio</h3>
-      <p>Design portfolio showcasing website styles — find your perfect site.</p>
-      <a href="https://websiteportfolio.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="brand">
-    <div class="card-thumb"></div>
-    <div class="card-body">
-      <div class="card-tag">NYC Tailblazers — E-Commerce</div>
-      <h3>Blazing Tails Storefront</h3>
-      <p>Online store for Blazing Tails merchandise and products.</p>
-      <a href="https://blazingtails.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <!-- APPS & TOOLS -->
-  <div class="card" data-cat="app">
-    <div class="card-thumb blue"></div>
-    <div class="card-body">
-      <div class="card-tag blue">App — Mobile</div>
-      <h3>PopSpot</h3>
-      <p>Entertainment &amp; pop culture mobile app. Browse and discover — built with Expo &amp; React Native.</p>
-      <a href="https://popspot.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="app">
-    <div class="card-thumb blue"></div>
-    <div class="card-body">
-      <div class="card-tag blue">App — Dashboard</div>
-      <h3>Mission Control Mobile</h3>
-      <p>Mobile companion app for monitoring NYC Tailblazers agent operations on the go.</p>
-      <a href="https://missionmobile.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="app">
-    <div class="card-thumb blue"></div>
-    <div class="card-body">
-      <div class="card-tag blue">App — Dashboard</div>
-      <h3>Mission Control Secure</h3>
-      <p>Secure internal ops dashboard with neon terminal UI. Real-time status and team operations.</p>
-      <a href="https://missioncontrolsecure.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="app">
-    <div class="card-thumb green"></div>
-    <div class="card-body">
-      <div class="card-tag green">App — Fitness</div>
-      <h3>GymBot Demo</h3>
-      <p>AI gym assistant chatbot — ask about class bookings, membership, and workout plans.</p>
-      <a href="https://gymbot.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="app">
-    <div class="card-thumb pink"></div>
-    <div class="card-body">
-      <div class="card-tag pink">Brand — Streetwear</div>
-      <h3>Trapables</h3>
-      <p>NYC streetwear brand. Graphic tees, hoodies, hats &amp; accessories — born in the streets of New York.</p>
-      <a href="https://trapables.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="app">
-    <div class="card-thumb green"></div>
-    <div class="card-body">
-      <div class="card-tag green">Tool — AI</div>
-      <h3>LLM Brains</h3>
-      <p>Persistent AI memory system — syncs an Obsidian vault to a searchable SQLite RAG pipeline.</p>
-      <a href="https://brains.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="app">
-    <div class="card-thumb purple"></div>
-    <div class="card-body">
-      <div class="card-tag purple">Tool — Dev</div>
-      <h3>Website Clones</h3>
-      <p>Playwright-based browser automation toolkit. Screenshots, web app testing, and rapid site cloning.</p>
-      <a href="https://clones.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-</div>
-
+<div class="search-wrap"><input type="text" id="search" placeholder="Search projects..." oninput="search()"></div>
+<div class="grid" id="grid"></div>
 <footer>NYC Tailblazers &copy; 2026 &mdash; Building the digital future of NYC</footer>
 
 <script>
+const PROJECTS = [
+  // CLIENT SITES
+  {cat:'client',color:'ct-gold',tag:'Client — Renovations',tagColor:'tag-gold',name:'Titan Renovations NYC',desc:'Full-service renovation & construction. Gallery, services, and contact form.',url:'https://titan.nyctailblazers.com',link:'Visit Site'},
+  {cat:'client',color:'ct-gold',tag:'Client — Painting',tagColor:'tag-gold',name:'C Painting Services',desc:'Professional painting across NYC — residential & commercial, interior & exterior.',url:'https://cpaintingservices.nyctailblazers.com',link:'Visit Site'},
+  {cat:'client',color:'ct-gold',tag:'Client — Painting',tagColor:'tag-gold',name:'C Painting Services Brooklyn',desc:'Brooklyn-focused painting services — residential, commercial, interior & exterior.',url:'https://cpaintingbrooklyn.nyctailblazers.com',link:'Visit Site'},
+  {cat:'client',color:'',tag:'Client — Coaching',tagColor:'',name:'Clarity Coaching Pro',desc:'Professional life & business coaching. Services overview, results showcase, and about pages.',url:'https://kaoz625.github.io/claritycoachingpro/',link:'Visit Site'},
+  {cat:'client',color:'ct-pink',tag:'Client — Brand Management',tagColor:'tag-pink',name:'Gentleman Brand Management',desc:'Premium brand management and consulting for artists, entrepreneurs, and creative professionals.',url:'https://gentlemanbrandmanagement.nyctailblazers.com',link:'Visit Site'},
+  {cat:'client',color:'ct-pink',tag:'Client — Beauty',tagColor:'tag-pink',name:'Luxe & Co Hair',desc:'Luxury hair salon — services menu, gallery, and online booking.',url:'https://luxeandcohair.nyctailblazers.com',link:'Visit Site'},
+  {cat:'client',color:'ct-blue',tag:'Client — HVAC',tagColor:'tag-blue',name:'Peak Pro HVAC',desc:'Heating, ventilation, and air conditioning services for NYC homes and businesses.',url:'https://peakprohvac.nyctailblazers.com',link:'Visit Site'},
+  {cat:'client',color:'ct-green',tag:'Client — Tattoo',tagColor:'tag-green',name:'Green Lantern Ink',desc:'Custom tattoo studio — portfolio, artist showcase, and booking.',url:'https://greenlanternink.nyctailblazers.com',link:'Visit Site'},
+  {cat:'client',color:'ct-purple',tag:'Client — Jewelry & Cleaning',tagColor:'tag-purple',name:'Royal Kims',desc:'Jewelry and cleaning services — product showcase and contact.',url:'https://royalkims.nyctailblazers.com',link:'Visit Site'},
+  {cat:'client',color:'',tag:'Client — Community',tagColor:'',name:'AFU Social Club',desc:'All For Uniting Social Club — Brooklyn\'s community movement. United, Anything Is Possible.',url:'https://afu.nyctailblazers.com',link:'Visit Site'},
+
+  // NYC TAILBLAZERS BRAND
+  {cat:'brand',color:'',tag:'NYC Tailblazers',tagColor:'',name:'Main Website',desc:'Professional dog walking & pet care in Brooklyn, NY. Services, booking, and contact.',url:'https://nyctailblazers.com',link:'Visit Site'},
+  {cat:'brand',color:'ct-blue',tag:'NYC Tailblazers — Modern',tagColor:'tag-blue',name:'Modern Site',desc:'Cinematic multi-service portfolio — dog walking, websites, apps, and AI agents.',url:'https://modern.nyctailblazers.com',link:'Visit Site'},
+  {cat:'brand',color:'',tag:'NYC Tailblazers — E-Commerce',tagColor:'',name:'Blazing Tails Storefront',desc:'AI magazine storefront with age gate, NSFW toggle, and 14 themed editions.',url:'https://blazingtails.nyctailblazers.com',link:'Visit Site'},
+  {cat:'brand',color:'',tag:'NYC Tailblazers — Portfolio',tagColor:'',name:'Website Portfolio',desc:'Design portfolio showcasing website styles — find your perfect site.',url:'https://websiteportfolio.nyctailblazers.com',link:'Visit Site'},
+  {cat:'brand',color:'',tag:'NYC Tailblazers — Original',tagColor:'',name:'Tailblazers Classic',desc:'The original Tailblazers website — the foundation of the NYC Tailblazers brand.',url:'https://tailblazers.nyctailblazers.com',link:'Visit Site'},
+
+  // APPS
+  {cat:'app',color:'ct-blue',tag:'App — Mobile',tagColor:'tag-blue',name:'PopSpot',desc:'Entertainment & pop culture mobile app. Browse and discover trending content — built with Expo & React Native.',url:'https://popspot.nyctailblazers.com',link:'Visit Site'},
+  {cat:'app',color:'ct-blue',tag:'App — Dashboard',tagColor:'tag-blue',name:'Mission Control Mobile',desc:'Mobile companion app for monitoring NYC Tailblazers agent operations and system status on the go.',url:'https://missionmobile.nyctailblazers.com',link:'Visit Site'},
+  {cat:'app',color:'ct-blue',tag:'App — Dashboard',tagColor:'tag-blue',name:'Mission Control Secure',desc:'Secure internal ops dashboard with neon terminal UI. Encrypted agent management and real-time status.',url:'https://missioncontrolsecure.nyctailblazers.com',link:'Visit Site'},
+  {cat:'app',color:'ct-green',tag:'App — Fitness',tagColor:'tag-green',name:'GymBot Demo',desc:'AI gym assistant chatbot — book classes, check membership, and get workout plans. Powered by AI.',url:'https://gymbot.nyctailblazers.com',link:'Visit Site'},
+  {cat:'app',color:'ct-pink',tag:'Brand — Streetwear',tagColor:'tag-pink',name:'Trapables',desc:'NYC streetwear brand with AI-powered ordering. Graphic tees, hoodies, hats — born in the streets of New York.',url:'https://trapables.nyctailblazers.com',link:'Visit Site'},
+  {cat:'app',color:'ct-teal',tag:'App — Renovations',tagColor:'tag-teal',name:'Titan Renovation App',desc:'Mobile app companion for Titan Renovations NYC — project tracking, quotes, and client communication.',url:'https://github.com/Kaoz625/titan-renovation-app',link:'View on GitHub'},
+  {cat:'app',color:'ct-blue',tag:'App — Desktop',tagColor:'tag-blue',name:'ClaudeCodex',desc:'Electron desktop IDE with multi-provider AI support — Claude, GPT, Gemini, and local models in one interface.',url:'https://github.com/Kaoz625/ClaudeCodex',link:'View on GitHub'},
+  {cat:'app',color:'ct-green',tag:'App — Browser Game',tagColor:'tag-green',name:'Marine Bros',desc:'Browser-based side-scrolling action game built in vanilla JS — no frameworks, pure web.',url:'https://github.com/Kaoz625/marine-bros',link:'View on GitHub'},
+  {cat:'app',color:'ct-purple',tag:'App — Accessibility',tagColor:'tag-purple',name:'Ears & Eyes',desc:'iOS AI assistant for hearing and vision accessibility — real-time audio description and captioning.',url:'https://github.com/Kaoz625/ears-and-eyes-app',link:'View on GitHub'},
+  {cat:'app',color:'ct-blue',tag:'App — AI Builder',tagColor:'tag-blue',name:'Open Lovable',desc:'AI website builder powered by Crawl4AI — clone, build, and re-imagine any website with multi-model AI.',url:'https://github.com/Kaoz625/open-lovable',link:'View on GitHub'},
+  {cat:'app',color:'ct-teal',tag:'App — Design System',tagColor:'tag-teal',name:'Pixel Perfect',desc:'Pixel-perfect UI component library and design system — consistent, production-ready components.',url:'https://github.com/Kaoz625/pixel-perfect',link:'View on GitHub'},
+  {cat:'app',color:'ct-purple',tag:'App — AI Assistant',tagColor:'tag-purple',name:'Hermes Agent Iris',desc:'Personalized AI assistant profile — multi-platform messaging with custom persona and memory.',url:'https://github.com/Kaoz625/hermes-agent-iris',link:'View on GitHub'},
+  {cat:'app',color:'',tag:'App — Foundation',tagColor:'',name:'MASTER APP',desc:'Universal app foundation with authentication, payments, and multi-platform support — the base layer for all NYC Tailblazers apps.',url:'https://github.com/Kaoz625/-MASTER_APP',link:'View on GitHub'},
+  {cat:'app',color:'ct-blue',tag:'App — iOS',tagColor:'tag-blue',name:'NYC Tailblazers iOS',desc:'Native iOS app for NYC Tailblazers — dog walking bookings, real-time tracking, and client management.',url:'https://github.com/Kaoz625/test-ipa-tailblazers',link:'View on GitHub'},
+
+  // AI & TOOLS
+  {cat:'ai',color:'ct-green',tag:'Tool — AI Memory',tagColor:'tag-green',name:'LLM Brains',desc:'Persistent AI memory system — syncs an Obsidian vault to a searchable SQLite RAG pipeline with vector search.',url:'https://brains.nyctailblazers.com',link:'Visit Site'},
+  {cat:'ai',color:'ct-green',tag:'Tool — Trading',tagColor:'tag-green',name:'AI Trading Bot',desc:'Autonomous AI trading bot using Alpaca paper trading and Claude Code cloud routines for strategy execution.',url:'https://github.com/Kaoz625/trading-bot',link:'View on GitHub'},
+  {cat:'ai',color:'ct-gold',tag:'Tool — Prediction Markets',tagColor:'tag-gold',name:'Polymarket AI Trader',desc:'Prediction market AI trading bot — 4 agents, 85% exit threshold, powered by wallet pattern analysis from 86M trades.',url:'https://github.com/Kaoz625/polymarket-ai-trader',link:'View on GitHub'},
+  {cat:'ai',color:'ct-blue',tag:'Tool — Landing Pages',tagColor:'tag-blue',name:'Claude Landing Page Agent',desc:'AI agent that generates and deploys landing pages using Claude — describe your business, get a live site.',url:'https://github.com/Kaoz625/claude-landing-page-agent',link:'View on GitHub'},
+  {cat:'ai',color:'ct-teal',tag:'Tool — Voice AI',tagColor:'tag-teal',name:'OpenClaw Voice Bridge',desc:'Jarvis-style offline voice interface — wake word triggers AI agent routing via Telegram or HTTP. 100% local, free.',url:'https://github.com/Kaoz625/openclaw-voice-bridge',link:'View on GitHub'},
+  {cat:'ai',color:'',tag:'Tool — Tutorial',tagColor:'',name:'Build Your Own OpenClaw',desc:'Step-by-step tutorial series for building your own OpenClaw AI agent system from scratch.',url:'https://github.com/Kaoz625/build-your-own-openclaw',link:'View on GitHub'},
+  {cat:'ai',color:'ct-purple',tag:'Tool — Agent Manager',tagColor:'tag-purple',name:'Hermes Setup',desc:'Hermes multi-agent profile manager — startup configs and profiles for 20 OpenClaw agents across 3 Macs.',url:'https://github.com/Kaoz625/hermes-setup',link:'View on GitHub'},
+  {cat:'ai',color:'ct-red',tag:'Tool — Cloud GPU',tagColor:'tag-red',name:'RunPod OpenClaw',desc:'OpenClaw deployed on RunPod GPU cloud — scalable AI agent infrastructure for high-compute workloads.',url:'https://github.com/Kaoz625/RUNPOD-OPENCLAW',link:'View on GitHub'},
+  {cat:'ai',color:'ct-red',tag:'Tool — Dev',tagColor:'tag-red',name:'Claw Code',desc:'AI coding harness written in Rust — 50K GitHub stars in 2 hours. Advanced tooling that makes real things done.',url:'https://github.com/Kaoz625/claw-code',link:'View on GitHub'},
+  {cat:'ai',color:'ct-teal',tag:'Tool — Voice',tagColor:'tag-teal',name:'Glaido Libre',desc:'Open-source voice AI integration — speech processing and real-time voice agent capabilities.',url:'https://github.com/Kaoz625/glaido-libre',link:'View on GitHub'},
+  {cat:'ai',color:'ct-blue',tag:'Tool — Code Gen',tagColor:'tag-blue',name:'PolyForge',desc:'Multi-language code generation and transformation toolkit — write once, deploy across languages.',url:'https://github.com/Kaoz625/polyforge',link:'View on GitHub'},
+  {cat:'ai',color:'ct-purple',tag:'Tool — Gateway',tagColor:'tag-purple',name:'NexGate',desc:'Next-generation AI gateway — routing, load balancing, and failover for multi-model AI deployments.',url:'https://github.com/Kaoz625/nexgate',link:'View on GitHub'},
+  {cat:'ai',color:'ct-purple',tag:'Tool — Dev',tagColor:'tag-purple',name:'Website Clones',desc:'Playwright-based browser automation toolkit — screenshots, web app testing, and rapid site cloning.',url:'https://clones.nyctailblazers.com',link:'Visit Site'},
+  {cat:'ai',color:'ct-purple',tag:'Tool — Automation',tagColor:'tag-purple',name:'Browser Automation Portfolio',desc:'NYC Tailblazers browser automation portfolio — Playwright scripts, design clones, and web scraping tools.',url:'https://github.com/Kaoz625/browser-automation-portfolio',link:'View on GitHub'},
+  {cat:'ai',color:'ct-green',tag:'Tool — Web Scraping',tagColor:'tag-green',name:'Crawl4AI Plugin',desc:'Crawl4AI plugin with custom commands, hooks, and skills for AI-powered web crawling inside Claude Code.',url:'https://github.com/Kaoz625/crawl4ai-plugin',link:'View on GitHub'},
+  {cat:'ai',color:'ct-green',tag:'Tool — MCP',tagColor:'tag-green',name:'Crawl4AI MCP',desc:'Free self-hosted Firecrawl alternative — Crawl4AI MCP plugin for Claude Code web research.',url:'https://github.com/Kaoz625/crawl4ai-mcp',link:'View on GitHub'},
+  {cat:'ai',color:'ct-teal',tag:'Tool — Web Scraping',tagColor:'tag-teal',name:'Crawl4AI Go Client',desc:'Go client for the Crawl4AI Cloud SDK — web scraping and AI content extraction in Go.',url:'https://github.com/Kaoz625/my-crawl4ai-project',link:'View on GitHub'},
+  {cat:'ai',color:'ct-red',tag:'Tool — Reverse Engineering',tagColor:'tag-red',name:'Ghidra MCP',desc:'MCP bridge server for Ghidra — connect Claude and AI agents to Ghidra reverse engineering tools.',url:'https://github.com/Kaoz625/ghidramcp',link:'View on GitHub'},
+  {cat:'ai',color:'ct-purple',tag:'Tool — LLM Runtime',tagColor:'tag-purple',name:'OpenClaw2Go LlamaCPP',desc:'Unified llama.cpp fork — merges audio, GLM-5 DSA, OuteTTS 1.0, and Eagle-3 PRs into one build.',url:'https://github.com/Kaoz625/openclaw2go-llamacpp',link:'View on GitHub'},
+  {cat:'ai',color:'ct-blue',tag:'Tool — LLM Router',tagColor:'tag-blue',name:'Paperclip OpenRouter',desc:'OpenRouter adapter for Paperclip — connect any LLM via OpenRouter to your Paperclip AI workflows.',url:'https://github.com/Kaoz625/paperclip-adapter-openrouter',link:'View on GitHub'},
+  {cat:'ai',color:'ct-teal',tag:'Tool — React',tagColor:'tag-teal',name:'Titan Renovations React',desc:'React + TypeScript + Tailwind build of the Titan Renovations site — Lovable-compatible component architecture.',url:'https://github.com/Kaoz625/titan-renovations-react',link:'View on GitHub'},
+
+  // PIPELINES
+  {cat:'pipeline',color:'ct-red',tag:'Pipeline — Video',tagColor:'tag-red',name:'Infinite Video Pipeline',desc:'AI-powered infinite video generation — automated content creation with image sequencing and video synthesis.',url:'https://github.com/Kaoz625/infinite-video-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-red',tag:'Pipeline — Image',tagColor:'tag-red',name:'Infinite Image Pipeline',desc:'Continuous AI image generation at scale — automated prompting, generation, and asset delivery.',url:'https://github.com/Kaoz625/infinite-image-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-pink',tag:'Pipeline — Characters',tagColor:'tag-pink',name:'Blazing Tails Characters',desc:'AI character asset pipeline for Blazing Tails — generates consistent character art across all 14 magazine editions.',url:'https://github.com/Kaoz625/blazing-tails-characters',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-teal',tag:'Pipeline — Analytics',tagColor:'tag-teal',name:'Analytics Pipeline',desc:'Automated analytics pipeline — data collection, processing, and dashboard reporting for NYC Tailblazers properties.',url:'https://github.com/Kaoz625/analytics-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-pink',tag:'Pipeline — Content',tagColor:'tag-pink',name:'Porn Magazine Pipeline',desc:'Automated AI content generation pipeline for the Blazing Tails adult magazine platform.',url:'https://github.com/Kaoz625/porn-magazine-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-gold',tag:'Pipeline — Marketing',tagColor:'tag-gold',name:'Drop Announcement Pipeline',desc:'AI-powered drop announcement system — generates and schedules release announcements across all channels.',url:'https://github.com/Kaoz625/drop-announcement-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-green',tag:'Pipeline — SEO',tagColor:'tag-green',name:'SEO Pipeline',desc:'SEO automation pipeline — keyword research, meta generation, content optimization, and ranking tools.',url:'https://github.com/Kaoz625/seo-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-purple',tag:'Pipeline — AI',tagColor:'tag-purple',name:'Face Consistency Pipeline',desc:'AI face consistency pipeline — ensures character face and identity stay consistent across all generated images.',url:'https://github.com/Kaoz625/face-consistency-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-blue',tag:'Pipeline — AI Training',tagColor:'tag-blue',name:'Training Data Pipeline',desc:'Curates and prepares high-quality datasets for AI model training — automated cleaning, labeling, and packaging.',url:'https://github.com/Kaoz625/training-data-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-gold',tag:'Pipeline — NFT',tagColor:'tag-gold',name:'NFT Packager Pipeline',desc:'Automates asset packaging and metadata generation for NFT collections — batch mint-ready output.',url:'https://github.com/Kaoz625/nft-packager-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-teal',tag:'Pipeline — Image',tagColor:'tag-teal',name:'Upscaler Pipeline',desc:'AI image upscaler pipeline — enhances resolution and quality of generated assets using AI models.',url:'https://github.com/Kaoz625/upscaler-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-pink',tag:'Pipeline — Branding',tagColor:'tag-pink',name:'Brand Asset Pipeline',desc:'Generates and manages brand assets at scale — logos, banners, thumbnails, and social media graphics.',url:'https://github.com/Kaoz625/brand-asset-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-red',tag:'Pipeline — Content',tagColor:'tag-red',name:'Thumbnail Generator Pipeline',desc:'AI-powered thumbnail creation pipeline — generates click-optimized thumbnails for all content automatically.',url:'https://github.com/Kaoz625/thumbnail-generator-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-purple',tag:'Pipeline — Story',tagColor:'tag-purple',name:'Infinite Story Pipeline',desc:'AI-generated continuous narrative content — characters, plot, and world-building that never ends.',url:'https://github.com/Kaoz625/infinite-story-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-teal',tag:'Pipeline — Publishing',tagColor:'tag-teal',name:'Content Scheduler Pipeline',desc:'Automated content scheduling and publishing — pushes AI-generated content across all platforms on schedule.',url:'https://github.com/Kaoz625/content-scheduler-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-blue',tag:'Pipeline — Captions',tagColor:'tag-blue',name:'Infinite Caption Pipeline',desc:'Automated AI caption generation for media — produces accessible, SEO-friendly captions at scale.',url:'https://github.com/Kaoz625/infinite-caption-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-green',tag:'Pipeline — Audio',tagColor:'tag-green',name:'Infinite Audio Pipeline',desc:'AI-generated audio content at scale — music, voiceover, and sound design automation.',url:'https://github.com/Kaoz625/infinite-audio-pipeline',link:'View on GitHub'},
+  {cat:'pipeline',color:'ct-red',tag:'Pipeline — Security',tagColor:'tag-red',name:'Prompt Injection Pipeline',desc:'LLM security research pipeline — automated testing and defense tools for prompt injection vulnerabilities.',url:'https://github.com/Kaoz625/prompt-injection-pipeline',link:'View on GitHub'},
+];
+
+const ARROW = `<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg>`;
+
+function renderCards(items) {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = items.map(p => `
+    <div class="card" data-cat="${p.cat}">
+      <div class="card-thumb ${p.color}"></div>
+      <div class="card-body">
+        <div class="card-tag ${p.tagColor}">${p.tag}</div>
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <a href="${p.url}">${p.link} ${ARROW}</a>
+      </div>
+    </div>`).join('');
+  document.getElementById('total-count').textContent = PROJECTS.length;
+}
+
+let currentCat = 'all';
+let currentSearch = '';
+
 function filter(cat, btn) {
+  currentCat = cat;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.card').forEach(card => {
-    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
-  });
+  applyFilters();
 }
+
+function search() {
+  currentSearch = document.getElementById('search').value.toLowerCase();
+  applyFilters();
+}
+
+function applyFilters() {
+  const filtered = PROJECTS.filter(p => {
+    const catMatch = currentCat === 'all' || p.cat === currentCat;
+    const searchMatch = !currentSearch ||
+      p.name.toLowerCase().includes(currentSearch) ||
+      p.desc.toLowerCase().includes(currentSearch) ||
+      p.tag.toLowerCase().includes(currentSearch);
+    return catMatch && searchMatch;
+  });
+  renderCards(filtered);
+}
+
+renderCards(PROJECTS);
 </script>
 </body>
 </html>
