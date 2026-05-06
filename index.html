@@ -17,7 +17,6 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
 
-  /* HERO */
   header {
     padding: 5rem 2rem 4rem;
     text-align: center;
@@ -33,7 +32,6 @@
   .stat-n { font-size:2rem; font-weight:800; background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
   .stat-l { font-size:.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; margin-top:.2rem; }
 
-  /* FILTERS */
   .filters { display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; padding:2.5rem 2rem 1.5rem; }
   .filter-btn {
     padding:.5rem 1.2rem; border-radius:99px; border:1px solid var(--border);
@@ -45,7 +43,6 @@
     background:rgba(255,102,0,.1);
   }
 
-  /* GRID */
   .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.25rem; padding:1rem 2rem 5rem; max-width:1400px; margin:0 auto; }
 
   .card {
@@ -54,24 +51,29 @@
     display:flex; flex-direction:column;
   }
   .card:hover { transform:translateY(-4px); border-color:var(--accent); box-shadow:0 12px 40px rgba(255,102,0,.12); }
+  .card.soon { opacity:.6; }
+  .card.soon:hover { transform:none; border-color:var(--border); box-shadow:none; }
 
   .card-thumb {
     height:10px;
     background:linear-gradient(90deg,var(--accent),var(--accent2));
   }
-  .card-thumb.blue  { background:linear-gradient(90deg,#00c2ff,#7b2fff); }
-  .card-thumb.green { background:linear-gradient(90deg,#00ff88,#00c2ff); }
-  .card-thumb.pink  { background:linear-gradient(90deg,#ff3366,#ff6600); }
-  .card-thumb.gold  { background:linear-gradient(90deg,#ffd700,#ff8c00); }
-  .card-thumb.purple{ background:linear-gradient(90deg,#9b59b6,#3498db); }
+  .card-thumb.blue   { background:linear-gradient(90deg,#00c2ff,#7b2fff); }
+  .card-thumb.green  { background:linear-gradient(90deg,#00ff88,#00c2ff); }
+  .card-thumb.pink   { background:linear-gradient(90deg,#ff3366,#ff6600); }
+  .card-thumb.gold   { background:linear-gradient(90deg,#ffd700,#ff8c00); }
+  .card-thumb.purple { background:linear-gradient(90deg,#9b59b6,#3498db); }
+  .card-thumb.gray   { background:linear-gradient(90deg,#444,#666); }
 
   .card-body { padding:1.4rem; flex:1; display:flex; flex-direction:column; }
-  .card-tag { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em; color:var(--accent); margin-bottom:.5rem; }
+  .card-tag { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em; color:var(--accent); margin-bottom:.5rem; display:flex; align-items:center; gap:.5rem; }
   .card-tag.blue   { color:#00c2ff; }
   .card-tag.green  { color:#00ff88; }
   .card-tag.pink   { color:#ff3366; }
   .card-tag.gold   { color:#ffd700; }
   .card-tag.purple { color:#9b59b6; }
+  .card-tag.gray   { color:#888; }
+  .badge-soon { background:#222; border:1px solid #444; color:#888; font-size:.65rem; padding:.15rem .5rem; border-radius:4px; text-transform:uppercase; letter-spacing:.08em; }
   .card h3 { font-size:1.05rem; font-weight:700; margin-bottom:.4rem; }
   .card p  { font-size:.85rem; color:var(--muted); line-height:1.5; flex:1; margin-bottom:1.2rem; }
   .card a {
@@ -82,6 +84,12 @@
   }
   .card a:hover { border-color:var(--accent); color:var(--accent); }
   .card a svg { width:12px; height:12px; }
+  .soon-label {
+    display:inline-flex; align-items:center;
+    font-size:.82rem; color:#555;
+    border:1px solid #2a2a2a; border-radius:8px;
+    padding:.45rem .9rem; width:fit-content;
+  }
 
   footer { text-align:center; padding:2rem; color:var(--muted); font-size:.8rem; border-top:1px solid var(--border); }
 </style>
@@ -93,9 +101,9 @@
   <h1>We Build <span>Digital Presence</span></h1>
   <p>Websites, apps, and digital tools for businesses across New York City.</p>
   <div class="stat-row">
-    <div class="stat"><div class="stat-n">20+</div><div class="stat-l">Sites Live</div></div>
+    <div class="stat"><div class="stat-n">15+</div><div class="stat-l">Sites Live</div></div>
     <div class="stat"><div class="stat-n">5</div><div class="stat-l">Industries</div></div>
-    <div class="stat"><div class="stat-n">1</div><div class="stat-l">Domain Network</div></div>
+    <div class="stat"><div class="stat-n">3</div><div class="stat-l">Coming Soon</div></div>
   </div>
 </header>
 
@@ -114,8 +122,8 @@
     <div class="card-body">
       <div class="card-tag gold">Client — Renovations</div>
       <h3>Titan Renovations NYC</h3>
-      <p>Full-service renovation &amp; construction. 10-section site with gallery, services, and contact.</p>
-      <a href="https://titan.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>Full-service renovation &amp; construction. 10-section site with gallery, services, and contact form.</p>
+      <a href="https://titan.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
     </div>
   </div>
 
@@ -124,18 +132,8 @@
     <div class="card-body">
       <div class="card-tag gold">Client — Painting</div>
       <h3>C Painting Services</h3>
-      <p>Professional painting services across NYC. Residential &amp; commercial.</p>
-      <a href="https://cpaintingservices.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="client">
-    <div class="card-thumb gold"></div>
-    <div class="card-body">
-      <div class="card-tag gold">Client — Painting</div>
-      <h3>C Painting Services Brooklyn</h3>
-      <p>Brooklyn-focused painting services — residential, commercial, interior &amp; exterior.</p>
-      <a href="https://cpaintingbrooklyn.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>Professional painting across NYC — residential &amp; commercial, interior &amp; exterior.</p>
+      <a href="https://cpaintingservices.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
     </div>
   </div>
 
@@ -144,38 +142,8 @@
     <div class="card-body">
       <div class="card-tag">Client — Coaching</div>
       <h3>Clarity Coaching Pro</h3>
-      <p>Professional life &amp; business coaching services.</p>
-      <a href="https://claritycoachingpro.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="client">
-    <div class="card-thumb pink"></div>
-    <div class="card-body">
-      <div class="card-tag pink">Client — Brand Management</div>
-      <h3>Gentleman Brand Management</h3>
-      <p>Premium brand management and consulting services.</p>
-      <a href="https://gentlemanbrandmanagement.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="client">
-    <div class="card-thumb pink"></div>
-    <div class="card-body">
-      <div class="card-tag pink">Client — Beauty</div>
-      <h3>Luxe &amp; Co Hair</h3>
-      <p>Luxury hair salon services and booking.</p>
-      <a href="https://luxeandcohair.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="client">
-    <div class="card-thumb blue"></div>
-    <div class="card-body">
-      <div class="card-tag blue">Client — HVAC</div>
-      <h3>Peak Pro HVAC</h3>
-      <p>Heating, ventilation, and air conditioning services.</p>
-      <a href="https://peakprohvac.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>Professional life &amp; business coaching. Services, results, and about pages.</p>
+      <a href="https://kaoz625.github.io/claritycoachingpro/">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
     </div>
   </div>
 
@@ -184,28 +152,58 @@
     <div class="card-body">
       <div class="card-tag green">Client — Tattoo</div>
       <h3>Green Lantern Ink</h3>
-      <p>Custom tattoo studio — portfolio, booking, and artist showcase.</p>
-      <a href="https://greenlanternink.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>Custom tattoo studio — portfolio, artist showcase, and booking.</p>
+      <a href="https://greenlanternink.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
     </div>
   </div>
 
   <div class="card" data-cat="client">
     <div class="card-thumb purple"></div>
     <div class="card-body">
-      <div class="card-tag purple">Client — Restaurant</div>
+      <div class="card-tag purple">Client — Jewelry &amp; Cleaning</div>
       <h3>Royal Kims</h3>
-      <p>Restaurant website with menu, hours, and reservations.</p>
-      <a href="https://royalkims.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>Jewelry and cleaning services — product showcase and contact.</p>
+      <a href="https://royalkims.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
     </div>
   </div>
 
   <div class="card" data-cat="client">
     <div class="card-thumb"></div>
     <div class="card-body">
-      <div class="card-tag">Client — Social</div>
+      <div class="card-tag">Client — Community</div>
       <h3>AFU Social Club</h3>
-      <p>Community &amp; social club web presence.</p>
-      <a href="https://afu.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>All For Uniting Social Club — Brooklyn's community movement. United, Anything Is Possible.</p>
+      <a href="https://afu.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+    </div>
+  </div>
+
+  <div class="card soon" data-cat="client">
+    <div class="card-thumb gray"></div>
+    <div class="card-body">
+      <div class="card-tag gray">Client — Brand Management <span class="badge-soon">Coming Soon</span></div>
+      <h3>Gentleman Brand Management</h3>
+      <p>Premium brand management and consulting services for artists and entrepreneurs.</p>
+      <span class="soon-label">In Development</span>
+    </div>
+  </div>
+
+  <div class="card soon" data-cat="client">
+    <div class="card-thumb gray"></div>
+    <div class="card-body">
+      <div class="card-tag gray">Client — Beauty <span class="badge-soon">Coming Soon</span></div>
+      <h3>Luxe &amp; Co Hair</h3>
+      <p>Luxury hair salon — services, gallery, and online booking.</p>
+      <span class="soon-label">In Development</span>
+    </div>
+  </div>
+
+  <div class="card soon" data-cat="client">
+    <div class="card-thumb gray"></div>
+    <div class="card-body">
+      <div class="card-tag gray">Client — HVAC <span class="badge-soon">Coming Soon</span></div>
+      <h3>Peak Pro HVAC</h3>
+      <p>Heating, ventilation, and air conditioning services for NYC homes and businesses.</p>
+      <span class="soon-label">In Development</span>
     </div>
   </div>
 
@@ -215,38 +213,8 @@
     <div class="card-body">
       <div class="card-tag">NYC Tailblazers</div>
       <h3>Main Website</h3>
-      <p>Official NYC Tailblazers homepage and brand hub.</p>
-      <a href="https://nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="brand">
-    <div class="card-thumb"></div>
-    <div class="card-body">
-      <div class="card-tag">NYC Tailblazers — E-Commerce</div>
-      <h3>Blazing Tails Storefront</h3>
-      <p>Online store for Blazing Tails merchandise and products.</p>
-      <a href="https://blazingtails.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="brand">
-    <div class="card-thumb blue"></div>
-    <div class="card-body">
-      <div class="card-tag blue">NYC Tailblazers — Modern</div>
-      <h3>Modern Site Redesign</h3>
-      <p>Next-generation NYC Tailblazers website built with React + Vite.</p>
-      <a href="https://modern.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-    </div>
-  </div>
-
-  <div class="card" data-cat="brand">
-    <div class="card-thumb"></div>
-    <div class="card-body">
-      <div class="card-tag">NYC Tailblazers — Portfolio</div>
-      <h3>Website Portfolio</h3>
-      <p>Showcase of all NYC Tailblazers web projects.</p>
-      <a href="https://websiteportfolio.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>Professional dog walking &amp; pet care in Brooklyn, NY. Services, booking, and contact.</p>
+      <a href="https://nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
     </div>
   </div>
 
@@ -256,18 +224,18 @@
     <div class="card-body">
       <div class="card-tag blue">App — Mobile</div>
       <h3>PopSpot</h3>
-      <p>Mobile app — entertainment and pop culture platform built with Expo.</p>
-      <a href="https://popspot.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>Entertainment &amp; pop culture mobile app. Browse, discover, and engage — built with Expo &amp; React Native.</p>
+      <a href="https://popspot.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
     </div>
   </div>
 
   <div class="card" data-cat="app">
     <div class="card-thumb blue"></div>
     <div class="card-body">
-      <div class="card-tag blue">App — Mobile</div>
+      <div class="card-tag blue">App — Dashboard</div>
       <h3>Mission Control Mobile</h3>
-      <p>Mobile command center for NYC Tailblazers operations.</p>
-      <a href="https://missionmobile.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>Mobile companion app for monitoring NYC Tailblazers agent operations and status on the go.</p>
+      <a href="https://missionmobile.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
     </div>
   </div>
 
@@ -276,8 +244,8 @@
     <div class="card-body">
       <div class="card-tag blue">App — Dashboard</div>
       <h3>Mission Control Secure</h3>
-      <p>Secure internal operations dashboard.</p>
-      <a href="https://missioncontrolsecure.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>Secure internal ops dashboard with neon terminal UI. Real-time status and team operations.</p>
+      <a href="https://missioncontrolsecure.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
     </div>
   </div>
 
@@ -286,18 +254,18 @@
     <div class="card-body">
       <div class="card-tag green">App — Fitness</div>
       <h3>GymBot Demo</h3>
-      <p>AI-powered gym assistant and workout planning demo.</p>
-      <a href="https://gymbot.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>AI gym assistant chatbot — ask about class bookings, membership, and workout plans. Powered by AI.</p>
+      <a href="https://gymbot.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
     </div>
   </div>
 
   <div class="card" data-cat="app">
     <div class="card-thumb pink"></div>
     <div class="card-body">
-      <div class="card-tag pink">App — Commerce</div>
+      <div class="card-tag pink">Brand — Streetwear</div>
       <h3>Trapables</h3>
-      <p>Trap music &amp; merchandise commerce platform.</p>
-      <a href="https://trapables.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>NYC streetwear brand. Graphic tees, hoodies, hats &amp; accessories — born in the streets of New York.</p>
+      <a href="https://trapables.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
     </div>
   </div>
 
@@ -306,8 +274,8 @@
     <div class="card-body">
       <div class="card-tag green">Tool — AI</div>
       <h3>LLM Brains</h3>
-      <p>Persistent AI memory system — Obsidian vault to SQLite RAG pipeline.</p>
-      <a href="https://brains.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>Persistent AI memory system — syncs an Obsidian vault to a searchable SQLite RAG pipeline with vector search.</p>
+      <a href="https://brains.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
     </div>
   </div>
 
@@ -316,8 +284,8 @@
     <div class="card-body">
       <div class="card-tag purple">Tool — Dev</div>
       <h3>Website Clones</h3>
-      <p>Web cloning and automation toolkit for rapid site development.</p>
-      <a href="https://clones.nyctailblazers.com" target="_blank">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+      <p>Playwright-based browser automation toolkit. Screenshots, web app testing, and rapid site cloning.</p>
+      <a href="https://clones.nyctailblazers.com">Visit Site <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
     </div>
   </div>
 
